@@ -6,7 +6,9 @@ function giveItBackLater(value, callback) {
 }
 
 function addSomePromises(somePromise) {
-return somePromise.then(value => value + value).catch(value => value + value + value)
+  return somePromise
+    .then(value => value + value)
+    .catch(value => value + value + value);
 }
 
 function promiseToGiveItBackLater(value) {
@@ -14,7 +16,5 @@ function promiseToGiveItBackLater(value) {
     giveItBackLater(value, resolve);
   });
 }
-
-
 
 module.exports = { giveItBackLater, addSomePromises, promiseToGiveItBackLater };
